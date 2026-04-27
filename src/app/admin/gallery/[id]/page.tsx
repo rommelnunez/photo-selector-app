@@ -89,7 +89,7 @@ export default function AdminGalleryPage() {
 
   const copyFilenames = () => {
     const filenames = selections
-      .map((s) => s.photos?.filename)
+      .map((s) => s.photos?.filename?.replace(/\.[^.]+$/, ""))
       .filter(Boolean)
       .sort()
       .join(", ");
